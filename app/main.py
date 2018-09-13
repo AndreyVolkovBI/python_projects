@@ -10,8 +10,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 @app.route("/")
 def index():
-    return 'Hello, world!'
-
     method = str(request.args.get('method'))  # post || simple || between || verified
     # user's params
     id = request.args.get('id')  # user's vk id
@@ -34,7 +32,8 @@ def index():
     elif method == 'post':
         output = fb.postUserToDb(int(id), fullName, deviceModel, androidVersion)
     else:
-        return dumps(method) + " " + dumps(owner)
+        return 'You have not done anything'
+        #return dumps(method) + " " + dumps(owner)
 
     if friends:
         fb.postRequestToStorage(owner, method, fromId, toId, loads(friends), output, fb.getTimeForRequests())
