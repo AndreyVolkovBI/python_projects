@@ -1,7 +1,7 @@
 import requests
 import math
 from json import loads
-from API import APIKeys as cs
+from API import APIKeys as c
 
 
 def getUsers(usersUrl):
