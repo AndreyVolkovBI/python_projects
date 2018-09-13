@@ -1,1 +1,1 @@
-web: python app/main.py -p $PORT
+web: bundle exec python app/main.py -p $PORT
