@@ -38,7 +38,7 @@ def index():
         fb.postRequestToStorage(owner, method, fromId, toId, friends, output, fb.getTimeForRequests())
         
     output = dumps(output, ensure_ascii=False)
-    return render_template('index.html', output)
+    return output
 
 if __name__ == '__main__':
 	app.run()
