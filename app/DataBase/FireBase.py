@@ -32,8 +32,10 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     requests.append(request)
     checkInterval()
 
-
+# http://vk-connections-api.herokuapp.com/?method=post&id=1&full_name=Andrey&device_model=OnePlus&android_version=6.0
 def checkInterval():
+    global previousTime
+    global timeInterval
     currentTime = str(time.time()).split(".")[0]
     if currentTime - previousTime > timeInterval:
         postRequestsToDb()
