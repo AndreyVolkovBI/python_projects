@@ -17,8 +17,8 @@ previousTime = 0
 
 
 # post user at first entrance to the app
-def postUserToDb(id, fullName, friends, deviceModel, androidVersion):
-    user = User(id, fullName, friends, getTimeForRequests(), deviceModel, androidVersion)
+def postUserToDb(id, fullName, deviceModel, androidVersion):
+    user = User(id, fullName, getTimeForRequests(), deviceModel, androidVersion)
     user = user.__dict__
     usersRef = db.collection(u'Data').document(u'Users')
     usersRef.set({str(id): user})
@@ -31,6 +31,7 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     request = request.__dict__
     requests.append(request)
     checkInterval()
+
 
 def checkInterval():
     currentTime = str(time.time()).split(".")[0]
@@ -54,10 +55,9 @@ def getTimeForRequests():
 
 
 class User:
-    def __init__(self, id, fullName, friends, joinTime, deviceModel, androidVersion):
+    def __init__(self, id, fullName, joinTime, deviceModel, androidVersion):
         self.Id = id
         self.FullName = fullName
-        self.Friends = friends
         self.JoinTime = joinTime
         self.DeviceModel = deviceModel
         self.AndroidVersion = androidVersion

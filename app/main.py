@@ -30,7 +30,7 @@ def index():
     elif method == 'verified':
         output = p.getWay(int(fromId), h.getPureLink(toId), loads(friends))
     elif method == 'post':
-        output = fb.postUserToDb(int(id), fullName, friends, deviceModel, androidVersion)
+        output = fb.postUserToDb(int(id), fullName, deviceModel, androidVersion)
     else:
         return 'You have not done anything'
         #return dumps(method) + " " + dumps(owner)
