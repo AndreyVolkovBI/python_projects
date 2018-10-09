@@ -36,7 +36,7 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
 def checkInterval():
     global previousTime
     global timeInterval
-    currentTime = str(time.time()).split(".")[0]
+    currentTime = int(str(time.time()).split(".")[0])
     if currentTime - previousTime > timeInterval:
         postRequestsToDb()
         previousTime = currentTime
