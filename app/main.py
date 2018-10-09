@@ -13,7 +13,7 @@ def index():
     method = str(request.args.get('method'))  # post || simple || between || verified
     # user's params
     id = request.args.get('id')  # user's vk id
-    fullName = str(request.args.get('full_name'))  # full vk name
+    fullName = str(request.args.get('full_name'))  # full vk name, friends will be later, on line 24
     deviceModel = str(request.args.get('device_model'))
     androidVersion = str(request.args.get('android_version'))
 
@@ -30,7 +30,7 @@ def index():
     elif method == 'verified':
         output = p.getWay(int(fromId), h.getPureLink(toId), loads(friends))
     elif method == 'post':
-        output = fb.postUserToDb(int(id), fullName, deviceModel, androidVersion)
+        output = fb.postUserToDb(int(id), fullName, friends, deviceModel, androidVersion)
     else:
         return 'You have not done anything'
         #return dumps(method) + " " + dumps(owner)
