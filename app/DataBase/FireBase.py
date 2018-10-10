@@ -22,7 +22,7 @@ def postUserToDb(id, fullName, deviceModel, androidVersion):
     user = User(id, fullName, getTimeForRequests(), deviceModel, androidVersion)
     user = user.__dict__
     usersRef = db.collection(u'Data').document(u'Users')
-    usersRef.set({str(id): user})
+    usersRef.update({str(id): user})
     return True
 
 
@@ -32,7 +32,7 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     request = request.__dict__
     requests.append(request)
     checkInterval()
-    
+
 
 def checkInterval():
     global previousTime
@@ -47,7 +47,7 @@ def checkInterval():
 def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
-    requestsRef.set({str(getTimeForRequests()): requests})
+    requestsRef.update({str(getTimeForRequests()): requests})
 
 
 def getTimeForRequests():
