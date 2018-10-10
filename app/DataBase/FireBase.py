@@ -12,6 +12,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # global variables to post data to FireBase every hour
+global requests
 requests = []
 timeInterval = 3600  # time interval in sec
 previousTime = 0
