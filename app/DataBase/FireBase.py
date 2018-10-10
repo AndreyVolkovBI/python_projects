@@ -28,6 +28,7 @@ def postUserToDb(id, fullName, deviceModel, androidVersion):
 
 # all requests post to global list of requests
 def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
+    pass
     # request = Request(owner, method, fromId, toId, friends, content, time)
     # request = request.__dict__
     # requests.append(request)
