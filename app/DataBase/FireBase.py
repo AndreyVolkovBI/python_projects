@@ -33,7 +33,7 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     global count
     request = Request(owner, method, fromId, toId, friends, content, time)
     request = request.__dict__
-    requests[count] = request
+    requests[str(count)] = request
     count += 1
     checkInterval()
 
