@@ -33,7 +33,6 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     # requests.append(request)
     # checkInterval()
 
-
 def checkInterval():
     global previousTime
     global timeInterval
