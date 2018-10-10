@@ -19,25 +19,24 @@ def index():
 
     # request's params
     owner = str(request.args.get('owner'))  # vk id of application owner
-    fromId = str(request.args.get('from'))  # id user from
-    toId = str(request.args.get('to'))  # id user to
+    fromId = h.getPureLink(str(request.args.get('from')))  # id user from
+    toId = h.getPureLink(str(request.args.get('to')))  # id user to
     friends = request.args.get('friends')  # list of friends in case we search from owner (owner id == fromId)
 
     if method == 'simple':
-        output = p.getWay(int(fromId), h.getPureLink(toId), loads(friends))
+        output = p.getWay(int(fromId), toId, loads(friends))
     elif method == 'between':
-        output = p.getWayBetween(h.getPureLink(fromId), h.getPureLink(toId))
+        output = p.getWayBetween(fromId, toId)
     elif method == 'verified':
-        output = p.getWay(int(fromId), h.getPureLink(toId), loads(friends))
+        output = p.getWay(int(fromId), toId, loads(friends))
     elif method == 'post':
         output = fb.postUserToDb(int(id), fullName, deviceModel, androidVersion)
     else:
         return 'You have not done anything'
-        #return dumps(method) + " " + dumps(owner)
 
     if friends:
         fb.postRequestToStorage(owner, method, fromId, toId, loads(friends), output, fb.getTimeForRequests())
-    else:
+    elif owner:
         fb.postRequestToStorage(owner, method, fromId, toId, friends, output, fb.getTimeForRequests())
         
     output = dumps(output, ensure_ascii=False)

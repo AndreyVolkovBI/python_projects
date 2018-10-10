@@ -6,6 +6,8 @@ def getPureLink(link):
         link = link.split('/')[1]
     if link.endswith('/'):
         link = link.split('/')[0]
+    if link.startswith('id'):
+        link = link[2:]
     return link
 
 
