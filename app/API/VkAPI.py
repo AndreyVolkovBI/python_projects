@@ -1,5 +1,6 @@
 import requests
 import math
+import time
 from json import loads
 from API import APIKeys as c
 
@@ -11,6 +12,8 @@ def getUsers(usersUrl):
         response = requests.get(c.usersGet.format(str(usersUrl))).text
         response = loads(response)
         temp = response.get('response')
+        if count > 1:
+            time.sleep(1)
         count += 1
         if count == 50:
             return None
@@ -24,6 +27,8 @@ def getFriends(id):
         response = requests.get(c.friendsGet.format(str(id))).text
         response = loads(response)
         temp = response.get('response')
+        if count > 1:
+            time.sleep(1)
         count += 1
         if count == 50:
             return None
@@ -38,6 +43,8 @@ def getExecute(code, token):
         execute = requests.get(myString).text
         execute = loads(execute)
         temp = execute.get('response')
+        if count > 1:
+            time.sleep(1)
         count += 1
         if count == 50:
             return None
