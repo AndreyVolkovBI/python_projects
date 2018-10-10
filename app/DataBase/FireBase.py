@@ -33,13 +33,13 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     # requests.append(request)
     # checkInterval()
 
-def checkInterval():
-    global previousTime
-    global timeInterval
-    currentTime = int(str(time.time()).split(".")[0])
-    if currentTime - previousTime > timeInterval:
-        postRequestsToDb()
-        previousTime = currentTime
+# def checkInterval():
+#     global previousTime
+#     global timeInterval
+#     currentTime = int(str(time.time()).split(".")[0])
+#     if currentTime - previousTime > timeInterval:
+#         postRequestsToDb()
+#         previousTime = currentTime
 
 
 # updates all the info from global variable requests to FireBase
