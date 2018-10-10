@@ -17,6 +17,26 @@ timeInterval = 3600  # time interval in sec
 previousTime = 0
 
 
+class User:
+    def __init__(self, id, fullName, joinTime, deviceModel, androidVersion):
+        self.Id = id
+        self.FullName = fullName
+        self.JoinTime = joinTime
+        self.DeviceModel = deviceModel
+        self.AndroidVersion = androidVersion
+
+
+class Request:
+    def __init__(self, owner, method, fromId, toId, friends, content, time):
+        self.Owner = owner
+        self.Method = method
+        self.FromId = fromId
+        self.ToId = toId
+        self.Friends = friends
+        self.Content = content
+        self.Time = time
+
+
 # post user at first entrance to the app
 def postUserToDb(id, fullName, deviceModel, androidVersion):
     user = User(id, fullName, getTimeForRequests(), deviceModel, androidVersion)
@@ -58,23 +78,3 @@ def getTimeForRequests():
     date = time[2].split(' ')[0] + '.' + time[1] + '.' + time[0]
     time = time[2].split(' ')[1].split('.')[0]
     return date + ' ' + time
-
-
-class User:
-    def __init__(self, id, fullName, joinTime, deviceModel, androidVersion):
-        self.Id = id
-        self.FullName = fullName
-        self.JoinTime = joinTime
-        self.DeviceModel = deviceModel
-        self.AndroidVersion = androidVersion
-
-
-class Request:
-    def __init__(self, owner, method, fromId, toId, friends, content, time):
-        self.Owner = owner
-        self.Method = method
-        self.FromId = fromId
-        self.ToId = toId
-        self.Friends = friends
-        self.Content = content
-        self.Time = time
