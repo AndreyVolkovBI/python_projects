@@ -1,6 +1,7 @@
 import os
 import datetime
 import time
+import pytz
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -32,7 +33,7 @@ def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     requests.append(request)
     checkInterval()
 
-# http://vk-connections-api.herokuapp.com/?method=post&id=1&full_name=Andrey&device_model=OnePlus&android_version=6.0
+
 def checkInterval():
     global previousTime
     global timeInterval
@@ -50,7 +51,7 @@ def postRequestsToDb():
 
 
 def getTimeForRequests():
-    time = str(datetime.datetime.now()).split('-')
+    time = str(datetime.datetime.now(pytz.timezone("Europe/Moscow"))).split('-')
     date = time[2].split(' ')[0] + '.' + time[1] + '.' + time[0]
     time = time[2].split(' ')[1].split('.')[0]
     return date + ' ' + time
