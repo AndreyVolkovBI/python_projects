@@ -12,8 +12,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # global variables to post data to FireBase every hour
-requests = {}
-count = 0
+requests = []
 timeInterval = 3600  # time interval in sec
 previousTime = 0
 
@@ -30,11 +29,9 @@ def postUserToDb(id, fullName, deviceModel, androidVersion):
 # all requests post to global list of requests
 def postRequestToStorage(owner, method, fromId, toId, friends, content, time):
     global requests
-    global count
     request = Request(owner, method, fromId, toId, friends, content, time)
     request = request.__dict__
-    requests[str(count)] = request
-    count += 1
+    requests.append(request)
     checkInterval()
 
 
@@ -51,7 +48,7 @@ def checkInterval():
 def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
-    requestsRef.set({str(getTimeForRequests()): requests})
+    requestsRef.set({str(getTimeForRequests()): ["hello", "my", "name", "is", "Andrey"]})  # requests = [{"id": 123, ....}, {"phd":12323, ...}]
 
 
 def getTimeForRequests():
