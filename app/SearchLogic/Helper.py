@@ -1,3 +1,5 @@
+import random
+
 def getPureLink(link):
     link = link.strip().lower()
     if 'vk.com/' in link:
@@ -9,6 +11,22 @@ def getPureLink(link):
     if link.startswith('id'):
         link = link[2:]
     return link
+
+def checkForNormalLength(friendsUserFrom, friendsUserTo):
+    if len(friendsUserFrom) + len(friendsUserTo) > 4000:
+        if len(friendsUserFrom) > len(friendsUserTo):
+            friendsUserFrom = listCut(friendsUserFrom)
+            checkForNormalLength(friendsUserFrom, friendsUserTo)
+        else:
+            friendsUserTo = listCut(friendsUserTo)
+            checkForNormalLength(friendsUserFrom, friendsUserTo)
+    else:
+        return friendsUserFrom, friendsUserTo
+
+def listCut(friendsList):
+    random.shuffle(friendsList)
+    cut = len(friendsList) // 2
+    return friendsList[:cut]
 
 
 def clearCircles(circles):
