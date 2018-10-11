@@ -18,6 +18,7 @@ class FirstDivision:
 
 
 def calculations(fromId, friendsUserFrom, toId, friendsUserTo):
+    print("Hello, I was here!")
     friendsUserFrom, friendsUserTo = h.checkForNormalLength(friendsUserFrom, friendsUserTo)
     firstHalfOfFriends, secondHalfOfFriends = getHalfOfFriends(friendsUserFrom, friendsUserTo)
 
