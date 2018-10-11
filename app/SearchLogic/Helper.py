@@ -20,8 +20,7 @@ def checkForNormalLength(friendsUserFrom, friendsUserTo):
         else:
             friendsUserTo = listCut(friendsUserTo)
             checkForNormalLength(friendsUserFrom, friendsUserTo)
-    else:
-        return friendsUserFrom, friendsUserTo
+    return friendsUserFrom, friendsUserTo
 
 def listCut(friendsList):
     random.shuffle(friendsList)
