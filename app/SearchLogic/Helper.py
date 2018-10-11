@@ -13,10 +13,6 @@ def getPureLink(link):
     return link
 
 def checkForNormalLength(friendsUserFrom, friendsUserTo):
-    print("----------TOP_CHECK")
-    print("check - first - " + str(len(friendsUserFrom)))
-    print("check - second - " + str(len(friendsUserTo)))
-    print("----------BOTTOM_CHECK")
     if len(friendsUserFrom) + len(friendsUserTo) > 2000:
         if len(friendsUserFrom) > len(friendsUserTo):
             friendsUserFrom = listCut(friendsUserFrom)

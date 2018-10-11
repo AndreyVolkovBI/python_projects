@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 from json import loads, dumps
 import os
+import time
 import Program as p
 import SearchLogic.Helper as h
 import DataBase.FireBase as fb
@@ -10,6 +11,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 @app.route("/")
 def index():
+    print("Time start - " + str(time.ctime()))
     method = str(request.args.get('method'))  # post || simple || between || verified
     # user's params
     id = request.args.get('id')  # user's vk id
@@ -40,6 +42,7 @@ def index():
         fb.postRequestToStorage(owner, method, fromId, toId, friends, output, fb.getTimeForRequests())
         
     output = dumps(output, ensure_ascii=False)
+    print("Time end - " + str(time.ctime()))
     return output
 
 if __name__ == '__main__':
