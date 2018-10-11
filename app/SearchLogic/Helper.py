@@ -20,10 +20,10 @@ def checkForNormalLength(friendsUserFrom, friendsUserTo):
     if len(friendsUserFrom) + len(friendsUserTo) > 2000:
         if len(friendsUserFrom) > len(friendsUserTo):
             friendsUserFrom = listCut(friendsUserFrom)
-            checkForNormalLength(friendsUserFrom, friendsUserTo)
+            friendsUserFrom, friendsUserTo = checkForNormalLength(friendsUserFrom, friendsUserTo)
         else:
             friendsUserTo = listCut(friendsUserTo)
-            checkForNormalLength(friendsUserFrom, friendsUserTo)
+            friendsUserFrom, friendsUserTo = checkForNormalLength(friendsUserFrom, friendsUserTo)
     return friendsUserFrom, friendsUserTo
 
 def listCut(friendsList):
