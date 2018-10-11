@@ -14,7 +14,6 @@ def getUsers(usersUrl):
         temp = response.get('response')
         if count > 1:
             time.sleep(1)
-            print("SLEEP(((( - user")
         count += 1
         if count == 50:
             return None
@@ -30,7 +29,6 @@ def getFriends(id):
         temp = response.get('response')
         if count > 1:
             time.sleep(1)
-            print("SLEEP(((( - friends") 
         count += 1
         if count == 50:
             return None
@@ -47,7 +45,6 @@ def getExecute(code, token):
         temp = execute.get('response')
         if count > 1:
             time.sleep(1)
-            print("SLEEP(((( - execute")
         count += 1
         if count == 50:
             return None

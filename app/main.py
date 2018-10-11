@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 from json import loads, dumps
 import os
+from os import environ
 import time
 import Program as p
 import SearchLogic.Helper as h
@@ -12,7 +13,9 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 @app.route("/")
 def index():
     print("Time start - " + str(time.ctime()))
-    method = str(request.args.get('method'))  # post || simple || between || verified
+    method = str(request.args.get('method'))  # post || simple || between || verified || bot
+    print(method)
+    print(type(method))
     # user's params
     id = request.args.get('id')  # user's vk id
     fullName = str(request.args.get('full_name'))  # full vk name, friends will be later, on line 24
@@ -33,19 +36,20 @@ def index():
         output = p.getWay(int(fromId), toId, loads(friends))
     elif method == 'post':
         output = fb.postUserToDb(int(id), fullName, deviceModel, androidVersion)
+    elif method == 'bot':
+        output = p.getWayBetween(fromId, toId)
     else:
         return 'You have not done anything'
 
     if friends:
-        fb.postRequestToStorage(owner, method, fromId, toId, loads(friends), output, fb.getTimeForRequests())
+        fb.postRequestToStorage(owner, method, fromId, toId, loads(friends), output)
     elif owner:
-        fb.postRequestToStorage(owner, method, fromId, toId, friends, output, fb.getTimeForRequests())
+        fb.postRequestToStorage(owner, method, fromId, toId, friends, output)
         
     output = dumps(output, ensure_ascii=False)
     print("Time end - " + str(time.ctime()))
     return output
 
 if __name__ == '__main__':
-    from os import environ
     app.run(host='0.0.0.0', port=environ.get("PORT", 5000))
 
