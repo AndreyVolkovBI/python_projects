@@ -71,6 +71,7 @@ def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
     requestsRef.set({str(getTimeForRequests()): str(requests)})
+    requests = []
 
 
 def getTimeForRequests():
