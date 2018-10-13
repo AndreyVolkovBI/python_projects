@@ -103,6 +103,8 @@ def algorithm(parents, userTo):
 
 
 def getWayCount(output):
+    print("-----------------------------------------------")
+    print(type(output))
     if isinstance(output, list):
         return [len(item) for item in output]
     return None
