@@ -100,3 +100,10 @@ def algorithm(parents, userTo):
         return listFinal
     else:
         return []
+
+
+def getWayCount(output):
+    if isinstance(output, list):
+        return [len(item) for item in output]
+    return None
+

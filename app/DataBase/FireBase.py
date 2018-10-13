@@ -13,7 +13,7 @@ db = firestore.client()
 
 # global variables to post data to FireBase every hour
 requests = []
-timeInterval = 100  # time interval in sec
+timeInterval = 10800  # time interval in sec - 3 hours
 previousTime = 0
 
 
@@ -70,7 +70,7 @@ def checkInterval():
 def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
-    requestsRef.set({str(getTimeForRequests()): requests})
+    requestsRef.update({str(getTimeForRequests()): requests})
     requests = []
 
 

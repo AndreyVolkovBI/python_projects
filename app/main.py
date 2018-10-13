@@ -42,9 +42,9 @@ def index():
         return 'You have not done anything'
 
     if friends:
-        fb.postRequestToStorage(owner, method, fromId, toId, loads(friends))
+        fb.postRequestToStorage(owner, method, fromId, toId, loads(friends), h.getWayCount(output))
     elif owner:
-        fb.postRequestToStorage(owner, method, fromId, toId, friends)
+        fb.postRequestToStorage(owner, method, fromId, toId, friends, h.getWayCount(output))
         
     output = dumps(output, ensure_ascii=False)
     print("Time end - " + str(time.ctime()))
