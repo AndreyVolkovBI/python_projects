@@ -60,9 +60,7 @@ def checkInterval():
     global previousTime
     global timeInterval
     currentTime = int(str(time.time()).split(".")[0])
-    print("Check")
     if currentTime - previousTime > timeInterval:
-        print("GOT IT!!!!!!!!!!!!")
         postRequestsToDb()
         previousTime = currentTime
 
@@ -71,7 +69,7 @@ def checkInterval():
 def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
-    requestsRef.update({str(getTimeForRequests()).replace(".", "-"): requests})
+    requestsRef.set({str(getTimeForRequests()).replace(".", "-"): requests})
     requests = []
 
 
