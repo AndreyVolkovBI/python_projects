@@ -27,7 +27,7 @@ class User:
 
 
 class Request:
-    def __init__(self, owner, method, fromId, toId, friends, content, time):
+    def __init__(self, owner, method, fromId, toId, friends, time):
         self.Owner = owner
         self.Method = method
         self.FromId = fromId
