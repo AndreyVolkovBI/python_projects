@@ -70,7 +70,7 @@ def checkInterval():
 def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
-    requestsRef.set({str(getTimeForRequests()): str(requests)})
+    requestsRef.set({str(getTimeForRequests()): requests})
     requests = []
 
 
