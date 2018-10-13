@@ -13,7 +13,7 @@ db = firestore.client()
 
 # global variables to post data to FireBase every hour
 requests = []
-timeInterval = 3600  # time interval in sec
+timeInterval = 100  # time interval in sec
 previousTime = 0
 
 
@@ -33,7 +33,7 @@ class Request:
         self.FromId = fromId
         self.ToId = toId
         self.Friends = friends
-        self.Content = content
+        # self.Content = content
         self.Time = time
 
 
@@ -47,9 +47,9 @@ def postUserToDb(id, fullName, deviceModel, androidVersion):
 
 
 # all requests post to global list of requests
-def postRequestToStorage(owner, method, fromId, toId, friends, content):
+def postRequestToStorage(owner, method, fromId, toId, friends):
     global requests
-    request = Request(owner, method, fromId, toId, friends, content, getTimeForRequests())
+    request = Request(owner, method, fromId, toId, friends, getTimeForRequests())
     request = request.__dict__
     requests.append(request)
     checkInterval()
@@ -59,7 +59,9 @@ def checkInterval():
     global previousTime
     global timeInterval
     currentTime = int(str(time.time()).split(".")[0])
+    print("Check")
     if currentTime - previousTime > timeInterval:
+        print("GOT IT!!!!!!!!!!!!")
         postRequestsToDb()
         previousTime = currentTime
 
@@ -68,7 +70,7 @@ def checkInterval():
 def postRequestsToDb():
     global requests
     requestsRef = db.collection(u'Data').document(u'Requests')
-    requestsRef.update({str(getTimeForRequests()): str(requests)})
+    requestsRef.set({str(getTimeForRequests()): str(requests)})
 
 
 def getTimeForRequests():
