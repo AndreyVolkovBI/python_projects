@@ -27,12 +27,13 @@ class User:
 
 
 class Request:
-    def __init__(self, owner, method, fromId, toId, friends, time):
+    def __init__(self, owner, method, fromId, toId, friends, outputCount, time):
         self.Owner = owner
         self.Method = method
         self.FromId = fromId
         self.ToId = toId
         self.Friends = friends
+        self.OutputCount = outputCount
         # self.Content = content
         self.Time = time
 
@@ -47,9 +48,9 @@ def postUserToDb(id, fullName, deviceModel, androidVersion):
 
 
 # all requests post to global list of requests
-def postRequestToStorage(owner, method, fromId, toId, friends):
+def postRequestToStorage(owner, method, fromId, toId, friends, outputCount):
     global requests
-    request = Request(owner, method, fromId, toId, friends, getTimeForRequests())
+    request = Request(owner, method, fromId, toId, friends, outputCount, getTimeForRequests())
     request = request.__dict__
     requests.append(request)
     checkInterval()
