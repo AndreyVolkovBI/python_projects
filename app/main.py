@@ -12,7 +12,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 @app.route("/")
 def index():
-    # print("Time start - " + str(time.ctime()))
     method = str(request.args.get('method'))  # post || simple || between || verified || bot
     # user's params
     id = request.args.get('id')  # user's vk id
@@ -45,7 +44,6 @@ def index():
         fb.postRequestToStorage(owner, method, fromId, toId, friends, h.getWayCount(output))
         
     output = dumps(output, ensure_ascii=False)
-    # print("Time end - " + str(time.ctime()))
     return output
 
 if __name__ == '__main__':
