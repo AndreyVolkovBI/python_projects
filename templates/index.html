@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	{% if title %}
+	<title>Raccoonn - {{ title }}</title>
+	{% else %}
+	<title>Raccoonn</title>
+	{% endif %}
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+	<header class="main-header grid" style="background-image: url(../static/img/0-header.jpg);">
+		<div class="header-content grid">
+			<!-- <p class="img-raccoonn-center"><img class="img-raccoonn" src="../static/img/raccoonn-logo.png"></p> -->
+			<h3 class="minor-raccoonn">Майнор "Стартап с нуля: практика создания собственного бизнеса"</h3>
+			<div class="title-raccoonn">Raccoonn<img class="img-raccoonn" src="../static/img/raccoonn-logo.png"></div>
+			<div class="header-buttons">
+				<h3 class="subtitle-raccoonn">онлайн сервис и приложение, обучающее детей программированию</h3>
+				<a href="#first-semester" class="button">Материалы по майнору</a>
+				<a href="#review" class="button button-gray">Оставить отзыв</a>
+			</div>
+			
+		</div>
+	</header>
+
+<section class="semester-info landing-section" id="first-semester">
+
+	<div class="container grid">
+		<div class="ready-text" id="1" onClick="window.location='./artifact1'" style="cursor:pointer">
+			<h2>Артефакт 1</h2>
+			<h3>Развернутое описание бизнес-идеи по Остервальдеру</h3>
+			<div class="points grid">
+				<div class="points-left">
+					<p>• Ключевые партнёры<br>• Ключевые виды деятельности<br>• Ключевые ресурсы<br>• Ценностные предложения<br>• Взаимоотношения с клиентами</p>
+				</div>
+				<div class="points-right">
+					<p>• Каналы сбыта<br>• Потребительские сегменты<br>• Структура издержек<br>• Потоки поступления доходов</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="ready-text" id="2" style="cursor:pointer">
+			<h2>Артефакт 2</h2>
+			<h3>Конкурентный анализ, сравнение альтернативных продуктовых решений</h3>
+			<div class="points grid">
+				<div class="points-left">
+					<p>• Прямые конкуренты<br>• Косвенные конкуренты<br>• Потенциальные конкуренты</p>
+				</div>
+				<div class="points-right">
+					<p>• Товары-заменители<br>• Свой продукт для сравнения</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<section class="formsection" id="review">
+	<div class="form-container">
+		<p class="form-text">Форма обратной связи</p>
+		<form class="grid" name="reviewForm">
+			<div><input type="text" name="name" id="review-content" placeholder="Комментарии, пожелания..." required></div>
+			<!-- <div><button id="submitReviewBtn" class="button" onclick="return sendReview()">Отправить</button></div> -->
+			<div><button class="button">Отправить</button></div>
+		</form>		
+	</div>	
+</section>
+
+<footer class="main-footer">
+	<div class="form-container">
+		<div class="footer-logo">Raccoonn © 2018	
+		</div>		
+	</div>
+</footer>
+
+</body>
+</html>

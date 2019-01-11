@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	{% if title %}
+	<title>Raccoonn - {{ title }}</title>
+	{% else %}
+	<title>Raccoonn</title>
+	{% endif %}
+</head>
+
+<body>
+	{% for item in data %}
+		<h1>{{ item }}</h1>
+		<h3>{{ data[item] }}</h3>
+	{% endfor %}
+</body>
+</html>

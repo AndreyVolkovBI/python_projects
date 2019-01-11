@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	{% if title %}
+	<title>Raccoonn - {{ title }}</title>
+	{% else %}
+	<title>Raccoonn</title>
+	{% endif %}
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+	<header class="main-header grid" style="background-image: url(../static/img/0-header.jpg);">
+		<div class="header-content grid">
+			<!-- <p class="img-raccoonn-center"><img class="img-raccoonn" src="../static/img/raccoonn-logo.png"></p> -->
+			<h3 class="minor-raccoonn">Майнор "Стартап с нуля: практика создания собственного бизнеса"</h3>
+			<div class="title-raccoonn">Raccoonn<img class="img-raccoonn" src="../static/img/raccoonn-logo.png"></div>
+			<div class="header-buttons">
+				<h3 class="subtitle-raccoonn">онлайн сервис и приложение, обучающее детей программированию</h3>
+				<a href="#artifacts" class="button">Материалы по майнору</a>
+				<a href="#review" class="button button-gray">Оставить отзыв</a>
+			</div>
+			
+		</div>
+	</header>
+
+	<section id="artifacts" class="portfolio-section grid">
+		<div class="portfolio-item grid" style="background-image: url(../static/img/1.jpg)" onClick="window.location.href='#1'"><span>Ключевые партнёры</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/2.jpg)" onClick="window.location.href='#2'"><span>Ключевые виды деятельности</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/3.jpg)" onClick="window.location.href='#3'"><span>Ключевые ресурсы</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/4.jpg)" onClick="window.location.href='#4'"><span>Ценностные предложения</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/5.jpg)" onClick="window.location.href='#5'"><span>Взаимоотношения с клиентами</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/6.jpg)" onClick="window.location.href='#6'"><span>Каналы сбыта</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/7.jpg)" onClick="window.location.href='#7'"><span>Потребительские сегменты</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/8.jpg)" onClick="window.location.href='#8'"><span>Структура издержек</span></div>
+		<div class="portfolio-item grid" style="background-image: url(../static/img/9.jpg)" onClick="window.location.href='#9'"><span>Потоки поступления доходов</span></div>
+	</div>
+</section>
+
+<section class="section-info landing-section">
+
+	<div class="container grid">
+		<div class="ready-text-left" id="1">
+			<h2>Ключевые партнеры</h2>
+			<p>• Профильные образовательные центры <br>• Школы, гимназии, лицеи <br>• Блогеры</p>
+			<p>Главные партнёры - организации, готовые предоставить возможность рекламы на оффлайн рынке. Организация бесплатных уроков, мастер-классов, тематических мероприятий в образовательных центрах, школах, гимназиях и лицеях по потребности каждого из этих учебных заведений.</p>
+		</div>
+
+		<div class="ready-text-right" id="2">
+			<h2>Ключевые виды деятельности</h2>
+			<p>• Обучение школьников программированию<br>• Подготовка и разбор олимпиадных задач<br>• Разбор кейсов из реальной практики</p>
+			<p>Создание и проведение онлайн курсов по нескольким языкам программирования, которые дети проходят сами или вместе с родителями, основываясь на текстовых/видео туториалах, открытом банке с задачами.</p>
+		</div>
+	</div>
+
+	<div class="container grid">
+		<div class="ready-text-left" id="3">
+			<h2>Ключевые ресурсы</h2>
+			<p>• Специалисты в области IT и образования<br>• Сервисы для рассылок, приема платежей, общения с учениками, размещения уроков</p>
+			<p>Ключевые ресурсы стартапа - программисты, разрабатывающие основной продукт, способные поддерживать его актуальность и работоспособность, специалисты в области IT, составляющие программу курсов, сторонние сервисы, способствующие развитию проекта (сервисы для рассылок, приема платежей, общения с учениками).</p>
+		</div>
+
+		<div class="ready-text-right" id="4">
+			<h2>Ценностные предложения </h2>
+			<p>• Инновационные методики обучения<br>• Удобство и доступность<br>• Сертификаты о прохождении курсов</p>
+			<p>Основные ценностные предложения - уникальные методики обучения, отличающиеся от онлайн и оффлайн конкурентов. Предоставление удобной среды разработки прямо на сайте, возможность получать уникальные знания из реальных примеров и практик во многих областях программирования. Курс по основам языка, как и общий банк с задачами разных уровней сложности будет доступен абсолютно любому пользователю сайта. После окончания курсов, проект выдаёт сертификат каждому ученику, успешно завершившему обучение на сайте.</p>
+		</div>
+	</div>
+
+	<div class="container grid">
+		<div class="ready-text-left" id="5">
+			<h2>Взаимоотношения с клиентами</h2>
+			<p>• Автоматизированное обслуживание<br>• Личные консультации<br>• Взаимодействие в сообществе.<br>• Вебинары</p>
+			<p>Взаимоотношение с клиентами, как и большинство бизнес-процессов в компании, будет выстроено через интернет. Для общих вопросов будет доступен FAQ. В открытом чате можно будет задать любой вопрос по навигации на сайте, материалам курса, методикам его проведения. Будут расписаны преимущества каждого отдельного курса, чтобы помочь пользователю определиться и выбрать то, что ему действительно необходимо. Периодически будут проводиться вебинары по конкретным траекториям развития обучения, на которых можно задать любые интересующие вопросы.</p>
+		</div>
+
+		<div class="ready-text-right" id="6">
+			<h2>Каналы сбыта</h2>
+			<p>• Тематические группы<br>• Сарафанный маркетинг<br>• Реклама у блогеров</p>
+			<p>Основными каналами сбыта будут тематические сайты по программированию. Это могут быть интернет-издания, группы, публичные страницы, информационные ресурсы, так или иначе связанные с нашей предметной областью. Оффлайн партнёры, размещающие рекламу о наших курсах.</p>
+		</div>
+	</div>
+
+	<div class="container grid">
+		<div class="ready-text-left" id="7">
+			<h2>Потребительские сегменты</h2>
+			<p>• Родители, заинтересованные в развитии навыков программирования и алгоритмического мышления у своих детей<br>• Школьники, проявляющие интерес к программированию, участию в профильных олимпиадах различного уровня, повышению своих навыков в сфере ИКТ</p>
+			<p>К каждой группе предполагается уникальный подход, основанный на их интересах и возможностях.</p>
+		</div>
+
+		<div class="ready-text-right" id="8">
+			<h2>Структура издержек </h2>
+			<p>• Расходы на рекламу<br>• Программы курсов<br>• Сценарии уроков, и материалы к ним<br>• Лендинги<br>• Вебинары<br>• Видеозаписи уроков<br>• Email-рассылки</p>
+			<p>В структурах издержек первое место занимают расходы на рекламу – это перманентные расходы стартапа, необходимые для постоянного привлечения аудитории. Второе место занимают it специалисты, разрабатывающие и поддерживающие в актуальном состоянии методические планы и рекомендации по каждому из курсов. Далее – расходы на дизайнеров, менеджеров и маркетологов проекта. Последнее место занимают поддержание сайта и работа сервера.</p>
+		</div>
+	</div>
+
+	<div class="container grid">
+		<div class="ready-text-left" id="9">
+			<h2>Основной доход</h2>
+			<p>• Продажа онлайн-курсов<br>• Проведение тематических мероприятий</p>
+			<p>Основной доход будут приносить продажи платных онлайн-курсов. Во вторую очередь – проведение тематических мероприятий, дополнительных уроков по потребности партнёров, как онлайн, так и оффлайн.</p>
+		</div>
+
+<!-- 		<div class="ready-text-right" id="10">
+			<h2>RACCOONN</h2>
+			<p>• Обучение школьников программированию<br>• Подготовка и разбор олимпиадных задач<br>• Разбор кейсов из реальной практики</p>
+			<p>Создание и проведение онлайн курсов по нескольким языкам программирования, которые дети проходят сами или вместе с родителями, основываясь на текстовых/видео туториалах, открытом банке с задачами; подготовка и разбор олимпиадных задач, разбор кейсов из реальной практики.</p>
+		</div> -->
+	</div>
+</section>
+
+<section class="formsection" id="review">
+	<div class="form-container">
+		<p class="form-text">Форма обратной связи</p>
+		<form class="grid" name="reviewForm">
+			<div><input type="text" name="name" id="review-content" placeholder="Комментарии, пожелания..." required></div>
+			<div><button id="submitReviewBtn" class="button" onclick="return sendReview()">Отправить</button></div>
+		</form>		
+	</div>	
+</section>
+
+<footer class="main-footer">
+	<div class="form-container">
+		<div class="footer-logo">Raccoonn © 2018	
+		</div>		
+	</div>
+</footer>
+
+</body>
+</html>
