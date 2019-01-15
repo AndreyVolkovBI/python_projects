@@ -1,0 +1,137 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.blog-home
+		grid-template-columns: repeat(3, 1fr)
+		.buttoncase
+			grid-column: 1 / 4
+	.blog-item
+		&nth-child(3)
+			grid-column: 2 / 3
+			grid-row: 1
+		&nth-child(4)
+			grid-column: 1 / 2
+			grid-row: 2
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.button
+		font-size: 18px
+	.button-case
+		grid-column: 1 / 4
+	.header-content
+		h1
+			font-size: 50px
+			line-height: 1.3
+
+	.blog-home
+		grid-template-columns: repeat(2, 1fr)
+		.buttoncase
+			grid-column: 1 / 3
+	.title-raccoonn
+		font-size: 70px
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.header-content
+		padding: 40px 20px
+		h1
+			font-size: 50px
+	.points
+		.container
+			grid-template-columns: 1fr
+	.points-right
+		grid-column: 1
+		font-size: 18px
+		padding:
+			top: 0
+			bottom: 60px
+			left: 40px
+		h2
+			margin-top: 0
+			margin-bottom: 10px
+	.formsection
+		form
+			grid-template-column: 1fr 1fr
+
+	.blog-home
+		grid-template-columns: 1fr
+		.buttoncase
+			grid-column: 1 / 2
+	.blog-item
+		&:nth-child(3)
+			grid-column: initial
+		&:nth-child(4)
+			grid-column: initial
+	
+	.title-raccoonn
+		font-size: 55px
+	.subtitle-raccoonn
+		font-size: 12px
+	.img-raccoonn
+		height: 40px
+	.button
+		font-size: 12px
+		padding: 10px 40px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.buttoncase
+		grid-column: 1 / 2
+	.title-raccoonn
+		font-size: 40px
+	.subtitle-raccoonn
+		font-size: 9px
+	.img-raccoonn
+		height: 30px
+	.button
+		font-size: 10px
+		padding: 10px 20px
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	.header-content
+		h1
+			font-size: 40px
+	.formsection
+		form
+			grid-template-column: 1fr
+	.main-footer
+		padding: 40px 0
+	.footer-copy
+		margin-top: 10px
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
