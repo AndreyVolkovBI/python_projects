@@ -5,3 +5,5 @@
 `Artifact 2` - competitive analysis, comparison of alternative product solutions
 
 `Artifact 3` - Dima Sokolov's table, hypotheses, description of the target audience, the pattern of the problem interview
+
+`Link to deployed website` - http://raccoonn.ru
